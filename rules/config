@@ -43,10 +43,12 @@ DEFAULT_BUILD_LOG_TIMESTAMP = none
 CHANGE_DEFAULT_PASSWORD ?= n
 
 # DEFAULT_USERNAME - default username for installer build
-DEFAULT_USERNAME = admin
+DEFAULT_USERNAME = custom_admin
 
 # DEFAULT_PASSWORD - default password for installer build
-DEFAULT_PASSWORD = YourPaSsWoRd
+# Password generated with mkpasswd -m sha-512. Password = sonic
+DEFAULT_PASSWORD = $6$UbE2g4vYRVVINSUb$Qnq7DErv1TACE3T.5Si5SNU8khwCG.SCftAKm6vTl2Cuxperklz55HtOVRJCbDSYgf5o6Uf1pWvE08TaBrg7Z0
+
 
 # ENABLE_DHCP_GRAPH_SERVICE - specify the source of minigraph to generate configuration file.
 # If set to y SONiC will get the minigraph from graph service. Graph service URL need to be
@@ -199,7 +201,7 @@ KUBERNETES_CNI_VERSION = 0.8.7-00
 KUBERNETES_CRI_TOOLS_VERSION = 1.26.0-00
 K8s_GCR_IO_PAUSE_VERSION = 3.5
 
-# INCLUDE_KUBERNETES_MASTER - if set to y kubernetes packages are installed o be able 
+# INCLUDE_KUBERNETES_MASTER - if set to y kubernetes packages are installed o be able
 # to run as master node in kubernetes cluster
 INCLUDE_KUBERNETES_MASTER ?= n
 
@@ -246,8 +248,8 @@ SONIC_ENABLE_SECUREBOOT_SIGNATURE ?= n
 # SECURE_UPGRADE_MODE - enum value for secure upgrade mode, valid options are "dev", "prod" and "no_sign"
 # SECURE_UPGRADE_PROD_SIGNING_TOOL - path to a vendor signing tool for production flow.
 # SECURE_UPGRADE_PROD_TOOL_ARGS - Extra arguments options for vendor to use to run his specific prod signing script
-SECURE_UPGRADE_DEV_SIGNING_KEY ?= 
-SECURE_UPGRADE_SIGNING_CERT ?= 
+SECURE_UPGRADE_DEV_SIGNING_KEY ?=
+SECURE_UPGRADE_SIGNING_CERT ?=
 SECURE_UPGRADE_MODE = "no_sign"
 SECURE_UPGRADE_PROD_SIGNING_TOOL ?=
 SECURE_UPGRADE_PROD_TOOL_ARGS ?=
