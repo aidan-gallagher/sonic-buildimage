@@ -1162,3 +1162,8 @@ sudo LANG=C DEBIAN_FRONTEND=noninteractive chroot $FILESYSTEM_ROOT apt-get -y in
 {% if ENABLE_MULTIDB == "y" %}
 sudo touch $FILESYSTEM_ROOT_ETC_SONIC/enable_multidb
 {% endif %}
+
+# Copy local-login configuration scripts
+sudo cp $IMAGE_CONFIGS/local-login/local-login.service $FILESYSTEM_ROOT_USR_LIB_SYSTEMD_SYSTEM
+echo "local-login.service" | sudo tee -a $GENERATED_SERVICE_FILE
+sudo cp $IMAGE_CONFIGS/local-login/local_login.py $FILESYSTEM_ROOT/usr/bin/local-login
