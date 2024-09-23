@@ -249,6 +249,12 @@ generate_config()
             fi
         fi
     fi
+
+    # Only allow root and redis group to read config_db.json. 
+    # Encrypted passwords (similar to /etc/shadow) may be stored in config_db.json.
+    sudo chmod 640 ${DEST_FILE}
+    sudo chown root:redis ${DEST_FILE}
+
     return 0
 }
 
