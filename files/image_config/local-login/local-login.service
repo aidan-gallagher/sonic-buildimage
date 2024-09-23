@@ -1,0 +1,17 @@
+[Unit]
+Description=Local login
+Requires=config-setup.service
+After=config-setup.service
+Before=systemd-logind.service sshd.service
+BindsTo=database.service
+BindsTo=sonic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/local-login.sh
+
+[Install]
+WantedBy=sonic.target
+
+
