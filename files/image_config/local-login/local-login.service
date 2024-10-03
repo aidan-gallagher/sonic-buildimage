@@ -9,7 +9,7 @@ BindsTo=sonic.target
 [Service]
 Type=oneshot
 RemainAfterExit=no
-ExecStart=/usr/bin/local-login.sh
+ExecStart=/usr/bin/local-login
 
 [Install]
 WantedBy=sonic.target

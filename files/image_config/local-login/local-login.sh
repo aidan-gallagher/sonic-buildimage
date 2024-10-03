@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+# TODO: delete this file now moved over to local-login.py
+
 ENABLED=$(sonic-cfggen -d -v "LOCAL_LOGIN")
 if [ -z "${ENABLED}" ]; then
 	echo Local password not set - leaving

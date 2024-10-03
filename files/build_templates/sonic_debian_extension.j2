@@ -1135,4 +1135,4 @@ sudo LANG=C DEBIAN_FRONTEND=noninteractive chroot $FILESYSTEM_ROOT apt-get -y in
 # Copy local-login configuration scripts
 sudo cp $IMAGE_CONFIGS/local-login/local-login.service $FILESYSTEM_ROOT_USR_LIB_SYSTEMD_SYSTEM
 echo "local-login.service" | sudo tee -a $GENERATED_SERVICE_FILE
-sudo cp $IMAGE_CONFIGS/local-login/local-login.sh $FILESYSTEM_ROOT/usr/bin/
+sudo cp $IMAGE_CONFIGS/local-login/local-login.py $FILESYSTEM_ROOT/usr/bin/local-login
