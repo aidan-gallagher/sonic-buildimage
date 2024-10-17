@@ -1,0 +1,53 @@
+module sonic-local-login {
+
+    yang-version 1.1;
+
+    namespace  "http://github.com/sonic-net/sonic-local-login";
+
+    prefix local-login;
+
+    revision 2022-09-23 {
+        description "Initial version";
+    }
+
+    typedef crypt-password-type {
+        type string;
+        description
+          "A password that is hashed based on the hash algorithm
+          indicated by the prefix in the string.  The string
+          takes the following form, based on the Unix crypt function:
+
+          $<id>[$<param>=<value>(,<param>=<value>)*][$<salt>[$<hash>]]
+
+          Common hash functions include:
+
+          id  | hash function
+           ---+---------------
+            1 | MD5
+            2a| Blowfish
+            2y| Blowfish (correct handling of 8-bit chars)
+            5 | SHA-256
+            6 | SHA-512
+
+          These may not all be supported by a target device.";
+    }
+
+    container sonic-local-login
+    {
+        container LOCAL_LOGIN 
+        {
+                list LOCAL_LOGIN_LIST 
+                {
+                    key username;
+                    leaf username 
+                    {
+                        type string;
+                    }
+                    leaf password 
+                    {
+                        type crypt-password-type;
+                    }
+                }
+        } 
+    } 
+}

@@ -2782,6 +2782,14 @@
                 "motd": "Some message of the day",
                 "logout": "Some logout message"
             }
+        },
+        "LOCAL_LOGIN": {
+            "bob": {
+                "password" : "$y$j9T$doEKhB.ynTAY9djAmJCZ8.$rLvhIG3bWN2X6Y4O9hYmUWuCaC7wdoqmsGklPXtVSmD"
+            },
+            "fred": {
+                "password" : "$y$j9T$4v8Rv2A9wn7s6iNY6zdjG1$v3Mr76KrV7ZGBXwIMed5Z2qDXoPPL9QRzV6BanVEv2D"
+            }
         }
     },
     "SAMPLE_CONFIG_DB_UNKNOWN": {
