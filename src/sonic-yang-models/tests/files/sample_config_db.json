@@ -10,6 +10,14 @@
             "192.0.0.8": {},
             "2603:10e1:0:6f4::1": {}
         },
+        "LOCAL_LOGIN": {
+            "bob": {
+                "password" : "bobs_encrypted_password"
+            },
+            "fred": {
+                "password" : "freds_encrypted_password"
+            }
+        },
         "DNS_NAMESERVER": {
             "1.1.1.1": {},
             "fe80:1000:2000:3000::1": {}

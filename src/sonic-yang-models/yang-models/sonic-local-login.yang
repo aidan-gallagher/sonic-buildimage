@@ -1,0 +1,31 @@
+module sonic-local-login {
+
+    yang-version 1.1;
+
+    namespace  "http://github.com/sonic-net/sonic-local-login";
+
+    prefix local-login;
+
+    revision 2022-09-23 {
+        description "Initial version";
+    }
+
+    container sonic-local-login
+    {
+        container LOCAL_LOGIN 
+        {
+                list LOCAL_LOGIN_LIST 
+                {
+                    key username;
+                    leaf username 
+                    {
+                        type string;
+                    }
+                    leaf password 
+                    {
+                        type string;
+                    }
+                }
+        } 
+    } 
+}
