@@ -2713,6 +2713,25 @@
             "ASIC_SENSORS_POLLER_STATUS": {
                 "admin_status": "enable"
             }
+        },
+        "LOCAL_LOGIN": {
+            "bob": {
+                "password" : "$y$j9T$doEKhB.ynTAY9djAmJCZ8.$rLvhIG3bWN2X6Y4O9hYmUWuCaC7wdoqmsGklPXtVSmD"
+            },
+            "fred": {
+                "password" : "$y$j9T$4v8Rv2A9wn7s6iNY6zdjG1$v3Mr76KrV7ZGBXwIMed5Z2qDXoPPL9QRzV6BanVEv2D"
+            }
+        },
+        "SSH_LOGIN": {
+            "bob|work-laptop": {
+                "ssh-public-key": "ssh-ed25519 AAAAC3NzaC1lZDasdasdasddsadasdsadsadsadvcfvsdvsdfsdI1NTE5AAAAIMZ5g bob@laptop"
+            },
+            "bob|home-desktop": {
+                "ssh-public-key": "ssh-ed25519 AAAAE2VjZHNhLXNoYTIasdsadatbmlzsdfsdfsccascsadsadasdcascasdadasdada bob@home"
+            },
+            "alice|tablet": {
+                "ssh-public-key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBa5xVbz21e9aXz7gL6fpn+o9vJz3nE1fSg+N5g4d3Ab alice@dev-workstation"
+            }
         }
     },
     "SAMPLE_CONFIG_DB_UNKNOWN": {
