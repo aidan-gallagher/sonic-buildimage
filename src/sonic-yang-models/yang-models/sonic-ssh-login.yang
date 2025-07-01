@@ -1,0 +1,31 @@
+module sonic-ssh-login {
+    yang-version 1.1;
+    namespace "http://github.com/sonic-net/sonic-ssh-login";
+    prefix ssh-login;
+    revision 2025-05-14 {
+        description "Initial version";
+    }
+
+    container sonic-ssh-login {
+        container SSH_LOGIN {
+            list SSH_LOGIN_LIST {
+                key "username keyname";
+
+                leaf username {
+                    type string;
+                    description "The name of the local user";
+                }
+
+                leaf keyname {
+                    type string;
+                    description "A unique name or label for the SSH key (e.g. devmachine)";
+                }
+
+                leaf ssh-public-key {
+                    type string;
+                    description "The public SSH key";
+                }
+            }
+        }
+    }
+}

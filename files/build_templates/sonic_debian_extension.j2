@@ -1154,6 +1154,18 @@ sudo rm -rf $FILESYSTEM_ROOT/tmp/mask_disabled_services.py
 
 sudo LANG=C DEBIAN_FRONTEND=noninteractive chroot $FILESYSTEM_ROOT apt-get -y install python3-dbus
 
+# Copy local-login configuration scripts
+sudo cp $IMAGE_CONFIGS/local-login/local-login.service $FILESYSTEM_ROOT_USR_LIB_SYSTEMD_SYSTEM
+echo "local-login.service" | sudo tee -a $GENERATED_SERVICE_FILE
+sudo cp $IMAGE_CONFIGS/local-login/local_login.py $FILESYSTEM_ROOT/usr/bin/local-login
+sudo chmod +x $FILESYSTEM_ROOT/usr/bin/local-login
+
+# Copy ssh-login configuration scripts
+sudo cp $IMAGE_CONFIGS/ssh-login/ssh-login.service $FILESYSTEM_ROOT_USR_LIB_SYSTEMD_SYSTEM
+echo "ssh-login.service" | sudo tee -a $GENERATED_SERVICE_FILE
+sudo cp $IMAGE_CONFIGS/ssh-login/ssh_login.py $FILESYSTEM_ROOT/usr/bin/ssh-login
+sudo chmod +x $FILESYSTEM_ROOT/usr/bin/ssh-login
+
 {% if installer_debs.strip() -%}
 {% for deb in installer_debs.strip().split(' ') -%}
 ## Unhold installed packages to allow these packages be upgrade after SONiC installed

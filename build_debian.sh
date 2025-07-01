@@ -502,6 +502,10 @@ rm /files/etc/ssh/sshd_config/Banner
 set /files/etc/ssh/sshd_config/Banner /etc/issue
 rm /files/etc/ssh/sshd_config/LogLevel
 set /files/etc/ssh/sshd_config/LogLevel VERBOSE
+
+# Set AuthorizedKeysFile to use /etc/ssh/authorized_keys/%u
+set /files/etc/ssh/sshd_config/AuthorizedKeysFile "/etc/ssh/authorized_keys/%u .ssh/authorized_keys"
+
 save
 quit
 EOF
